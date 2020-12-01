@@ -200,13 +200,14 @@ public class Main extends Application{
 	AnimationTimer timer;
 	MyStage background;
 	Animal animal;
+	Scene insscene;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
 		background = new MyStage();
 		Scene scene  = new Scene(background,600,800);//Frogger Game
-
+		
 	      Image image = new Image("file:src/p4_group_8_repo/froggermenu.jpg", 600, 800, true, true);
 	      //Creating the image view
 	      ImageView imageView = new ImageView();
@@ -219,8 +220,10 @@ public class Main extends Application{
 		  imageView.setFitHeight(800);
 	      imageView.setPreserveRatio(true);
 	      //Setting the Scene object
-	      Group root = new Group(imageView);
-			
+	      Group root = new Group();
+	      root.getChildren().addAll(imageView);
+	      	 
+		//Start Button
 	  		Button btnstart = new Button("START");
 	  		btnstart.setTranslateX(100);
 	  	    btnstart.setTranslateY(-400);
@@ -230,46 +233,50 @@ public class Main extends Application{
 	  			background.start();
 	  			start();
 	  	    });
-	  	    
-	  //Manual Button
+		  	 
+	  //Instruction Button
 	  	    Button btnmanual = new Button("INSTRUCTIONS");
 	  	    btnmanual.setTranslateX(100);
 	  	    btnmanual.setTranslateY(-375);
 	  	    //btnmanual.setOnAction(this);
 	  	    btnmanual.setOnMouseClicked(event ->{
-	  	    	primaryStage.setScene(scene);
+	  	    	primaryStage.setScene(insscene);
 	  	    	primaryStage.show();
 	  	    });
-	  	    
-	  	     
+	  	      	     
 	  //Exit Button
 	  	  Button btnexit = new Button("EXIT");
 	  	  btnexit.setTranslateX(100);
 	  	  btnexit.setTranslateY(-350);
-	  	  //btnexit.setOnAction(this);
 	  	  btnexit.setOnMouseClicked(event -> {
 	  		  
 	  	  System.exit(0);
 	  	  
 	  	  });
 	  	  
+	  //Game Menu Layout
 	  	  VBox layout = new VBox(20); 
-	  	  
 	  	  layout.getChildren().addAll(root, btnstart , btnmanual, btnexit);
-	  	 
-	  	  // Game Menu
 	  	  Scene menuscene = new Scene(layout,600,540 ); 
+	  	 
+	  //Instructions Layout
+	  	  Button btnbackins = new Button("BACK");
+	  	  btnbackins.setTranslateX(100);
+	  	  btnbackins.setTranslateY(-375);
+	  	  btnbackins.setOnMouseClicked(event ->{
+  	    	primaryStage.setScene(menuscene);
+  	    	primaryStage.show();
+  	    });
 	  	  
-	  	//Button Function
-
-	  	  
-	  
+	  	  StackPane layoutins = new StackPane(); 
+		  layoutins.getChildren().addAll(btnbackins);  
+		  insscene = new Scene(layoutins,600,540);
 	  	  
 		//Obstacle obstacle = new Obstacle("file:src/p4_group_8_repo/truck1Right.png", 25, 25, 3);
 		//Obstacle obstacle1 = new Obstacle("file:src/p4_group_8_repo/truck2Right.png", 100, 100,2 );
 		//Obstacle obstacle2 = new Obstacle("file:src/p4_group_8_repo/truck1Right.png",0,  150, 1);
 	  	    
-		BackgroundImage froggerback = new BackgroundImage("file:src/p4_group_8_repo/black.png");
+		BackgroundImage froggerback = new BackgroundImage("file:src/p4_group_8_repo/arcade.png");
 	    
 		background.add(froggerback);
 		
@@ -333,34 +340,6 @@ public class Main extends Application{
 		//background.add(obstacle1);
 		//background.add(obstacle2);
 		
-		/*
-		 // add the label, text field and button 
-        
-		HBox hbox = new HBox(btnstart, btnexit); 
-
-        // set spacing 
-        hbox.setSpacing(10); 
-
-        // set alignment for the HBox 
-        hbox.setAlignment(Pos.CENTER); 
-		 // create a input stream 
-        FileInputStream input = new FileInputStream("file:src/p4_group_8_repo/menubg.png"); 
-
-        // create a image 
-        Image image = new Image(input); 
-
-        // create a background image 
-        BackgroundImage backgroundimage = new BackgroundImage(image,  
-                                         BackgroundRepeat.NO_REPEAT,  
-                                         BackgroundRepeat.NO_REPEAT,  
-                                         BackgroundPosition.DEFAULT,  
-                                            BackgroundSize.DEFAULT); 
-
-        background.add(backgroundimage); 
-
-        // set background 
-        hbox.setBackground(backgroundimage);*/ 
-		
 		primaryStage.setTitle("FROGGER");
 		primaryStage.setScene(menuscene);
 		primaryStage.show();
@@ -368,13 +347,14 @@ public class Main extends Application{
 	}
 	//end of start
 	
-		//Button styles
+		//Button styles (Refactored)
 	  	class Button extends StackPane{
 			private Text text;
 			
 			public Button(String name) {
 				text = new Text(name);
-				text.setFont(text.getFont().font(20));
+				text.getFont();
+				text.setFont(Font.font(20));
 				text.setFill(Color.WHITE);
 				
 				Rectangle backg = new Rectangle(200,30);
@@ -408,10 +388,6 @@ public class Main extends Application{
 				
 			}
 		}
-	private Object setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	/*catch (Exception e) { 
 		  
