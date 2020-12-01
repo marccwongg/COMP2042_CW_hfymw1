@@ -247,7 +247,7 @@ public class Main extends Application{
 	  	  btnexit.setTranslateX(100);
 	  	  btnexit.setTranslateY(-350);
 	  	  //btnexit.setOnAction(this);
-	  	  btnexit.setOnAction(event -> {
+	  	  btnexit.setOnMouseClicked(event -> {
 	  		  
 	  	  System.exit(0);
 	  	  
@@ -263,46 +263,7 @@ public class Main extends Application{
 	  	//Button Function
 
 	  	  
-	  	//Button styles
-	  	class Button extends StackPane{
-			private Text text;
-			
-			public Button(String name) {
-				text = new Text(name);
-				text.setFont(text.getFont().font(20));
-				text.setFill(Color.WHITE);
-				
-				Rectangle backg = new Rectangle(200,30);
-				backg.setOpacity(0.6);
-				backg.setFill(Color.BLACK);
-				backg.setEffect(new GaussianBlur(4.0));
-				
-				setAlignment(Pos.CENTER_LEFT);
-				setRotate(-0.5);
-				getChildren().addAll(backg,text);//White background
-				
-				setOnMouseEntered(event ->{
-					backg.setTranslateX(10);
-					text.setTranslateX(10);
-					backg.setFill(Color.WHITE);
-					text.setFill(Color.BLACK);
-				});
-				
-				setOnMouseExited(event ->{
-					backg.setTranslateX(10);
-					text.setTranslateX(10);
-					backg.setFill(Color.BLACK);
-					text.setFill(Color.WHITE);
-				});
-				
-				DropShadow drop = new DropShadow(50, Color.WHITE);
-				drop.setInput(new Glow());
-				
-				setOnMousePressed(event -> setEffect(drop));
-				setOnMouseReleased(event -> setEffect(null));
-				
-			}
-		}
+	  
 	  	  
 		//Obstacle obstacle = new Obstacle("file:src/p4_group_8_repo/truck1Right.png", 25, 25, 3);
 		//Obstacle obstacle1 = new Obstacle("file:src/p4_group_8_repo/truck2Right.png", 100, 100,2 );
@@ -405,7 +366,48 @@ public class Main extends Application{
 		primaryStage.show();
 		//start();
 	}
+	//end of start
 	
+		//Button styles
+	  	class Button extends StackPane{
+			private Text text;
+			
+			public Button(String name) {
+				text = new Text(name);
+				text.setFont(text.getFont().font(20));
+				text.setFill(Color.WHITE);
+				
+				Rectangle backg = new Rectangle(200,30);
+				backg.setOpacity(0.6);
+				backg.setFill(Color.BLACK);
+				backg.setEffect(new GaussianBlur(4.0));
+				
+				setAlignment(Pos.CENTER_LEFT);
+				setRotate(-0.5);
+				getChildren().addAll(backg,text);//White background
+				
+				setOnMouseEntered(event ->{
+					backg.setTranslateX(10);
+					text.setTranslateX(10);
+					backg.setFill(Color.WHITE);
+					text.setFill(Color.BLACK);
+				});
+				
+				setOnMouseExited(event ->{
+					backg.setTranslateX(10);
+					text.setTranslateX(10);
+					backg.setFill(Color.BLACK);
+					text.setFill(Color.WHITE);
+				});
+				
+				DropShadow drop = new DropShadow(50, Color.WHITE);
+				drop.setInput(new Glow());
+				
+				setOnMousePressed(event -> setEffect(drop));
+				setOnMouseReleased(event -> setEffect(null));
+				
+			}
+		}
 	private Object setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		return null;
