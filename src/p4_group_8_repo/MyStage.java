@@ -5,6 +5,7 @@ import java.io.File;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+import p4_group_8_repo.Main.Button;
 
 public class MyStage extends World{
 	MediaPlayer mediaPlayer;
