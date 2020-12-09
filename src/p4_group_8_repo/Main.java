@@ -1,11 +1,16 @@
 package p4_group_8_repo;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javafx.animation.AnimationTimer;
@@ -262,10 +267,20 @@ public class Main extends Application{
         System.out.println(e.getMessage()); 
     } */
 	
+	  	//controller
 	public void createTimer() {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
+            	BufferedReader reader = null; 
+                BufferedReader reader1 = null;
+                BufferedWriter writer = null;
+                
+              //Create an ArrayList object to hold the lines of input file
+                ArrayList<String> lines = new ArrayList<String>();
+                ArrayList<String> lines1 = new ArrayList<String>();
+                
+                
             	if (animal.changeScore()) {
             		setNumber(animal.getPoints());
             	}
@@ -283,22 +298,77 @@ public class Main extends Application{
             	
             	try {
             	    if (animal.getStop()) {
-            		File myObj = new File("D:\\Java Eclipse\\TryFrog1\\src\\p4_group_8_repo\\highscore.txt");
+            		File myObj = new File("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt");
             	      if (myObj.createNewFile()) {
             	        System.out.println("File created: " + myObj.getName());
             	      } else {
             	        System.out.println("File already exists.");
             	     }
-            	    FileWriter myWriter = new FileWriter("D:\\Java Eclipse\\TryFrog1\\src\\p4_group_8_repo\\highscore.txt", true);
-          	        myWriter.write("\n");
+            	    FileWriter myWriter = new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt", true);
+          	        myWriter.write("Score History: ");
+          	        /*myWriter.write("\n");
             	    myWriter.write("Your latest score is: "  + animal.getPoints());
-          	        myWriter.close();
+          	        myWriter.close();*/
             	    }
             	   } catch (IOException e) {
             	      System.out.println("An error occurred.");
             	      e.printStackTrace();
             	    }
-            }
+            	
+            	//Create and write highscores in a text file
+            	try
+            	{
+            		//Creating BufferedReader object to read the input file
+            		reader = new BufferedReader(new FileReader("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt"));
+            		//Reading all the lines of input file one by one and adding them into ArrayList
+            		String currentLine = reader.readLine();
+            		while (currentLine != null) 
+                    {
+                        lines.add(currentLine);
+                        currentLine = reader.readLine();
+                    }
+            		
+            		//Sorting the ArrayList
+                    
+                    Collections.sort(lines, Collections.reverseOrder());
+                     
+                    //Creating BufferedWriter object to write into output file
+                     
+                    writer = new BufferedWriter(new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscoresorted.txt"));
+                    
+                  //Writing sorted lines into output file
+                    writer.write("Highgest Score First");
+                    writer.newLine();
+                    for (String line : lines)
+                    {
+                        writer.write(line);
+                        writer.newLine();
+                    }
+                } 
+            	catch (IOException e) 
+                {
+                    e.printStackTrace();
+                }
+            	finally
+                {
+                    //Closing the resources   
+                    try
+                    {
+                        if (reader != null)
+                        {
+                            reader.close();
+                        }  
+                        if(writer != null)
+                        {
+                            writer.close();
+                        }
+                    } 
+                    catch (IOException e) 
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            	}
         };
     }
 	public void start() {

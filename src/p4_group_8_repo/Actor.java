@@ -25,6 +25,7 @@ public abstract class Actor extends ImageView{
         return this.getBoundsInLocal().getHeight();
     }
 
+    //controller
     public <A extends Actor> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
         ArrayList<A> someArray = new ArrayList<A>();
         for (A actor: getWorld().getObjects(cls)) {
@@ -35,6 +36,7 @@ public abstract class Actor extends ImageView{
         return someArray;
     }
     
+    //controller
     public void manageInput(InputEvent e) {
         
     }
