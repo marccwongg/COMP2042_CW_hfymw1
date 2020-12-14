@@ -33,7 +33,6 @@ import javafx.util.Duration;
 //MainMenu
 import javafx.application.Application;
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.GaussianBlur;
@@ -50,7 +49,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 
 public class Main extends Application{
 	AnimationTimer timer;
@@ -267,7 +265,7 @@ public class Main extends Application{
         System.out.println(e.getMessage()); 
     } */
 	
-	  	//controller
+	 //controller
 	public void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -275,6 +273,7 @@ public class Main extends Application{
             	BufferedReader reader = null; 
                 BufferedReader reader1 = null;
                 BufferedWriter writer = null;
+                String newLine = System.getProperty("line.separator");
                 
               //Create an ArrayList object to hold the lines of input file
                 ArrayList<String> lines = new ArrayList<String>();
@@ -285,10 +284,11 @@ public class Main extends Application{
             		setNumber(animal.getPoints());
             	}
             	if (animal.getStop()) {
-            		System.out.print("STOPP:");
+            		System.out.print("STOP:");
             		background.stopMusic();
             		stop();
             		background.stop();
+            		
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
@@ -296,6 +296,7 @@ public class Main extends Application{
             		alert.show();
             	}
             	
+            	//Storing highscore into a text file
             	try {
             	    if (animal.getStop()) {
             		File myObj = new File("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt");
@@ -305,10 +306,10 @@ public class Main extends Application{
             	        System.out.println("File already exists.");
             	     }
             	    FileWriter myWriter = new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt", true);
-          	        myWriter.write("Score History: ");
-          	        /*myWriter.write("\n");
-            	    myWriter.write("Your latest score is: "  + animal.getPoints());
-          	        myWriter.close();*/
+            	    myWriter.write(newLine);
+            	    myWriter.write("*****SCORE HISTORY*****" + newLine);
+            	    myWriter.write("\n Your latest score is: "  + animal.getPoints() + newLine);
+          	        myWriter.close();
             	    }
             	   } catch (IOException e) {
             	      System.out.println("An error occurred.");
