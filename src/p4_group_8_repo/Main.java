@@ -288,12 +288,6 @@ public class Main extends Application{
             		background.stopMusic();
             		stop();
             		background.stop();
-            		
-            		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 800");
-            		alert.show();
             	}
             	
             	//Storing highscore into a text file
@@ -306,15 +300,23 @@ public class Main extends Application{
             	        System.out.println("File already exists.");
             	     }
             	    FileWriter myWriter = new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt", true);
-            	    myWriter.write(newLine);
             	    myWriter.write("*****SCORE HISTORY*****" + newLine);
-            	    myWriter.write("\n Your latest score is: "  + animal.getPoints() + newLine);
-          	        myWriter.close();
             	    }
             	   } catch (IOException e) {
             	      System.out.println("An error occurred.");
             	      e.printStackTrace();
             	    }
+            	
+            	try {
+            		if (animal.getStop()) {
+            		FileWriter myWriter1 = new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt", true);
+            	    myWriter1.write(newLine + ""+ animal.getPoints()+ newLine);
+          	        myWriter1.close();
+            		}
+            	} catch (IOException e) {
+          	      System.out.println("An error occurred.");
+          	      e.printStackTrace();
+          	  }
             	
             	//Create and write highscores in a text file
             	try
@@ -364,12 +366,45 @@ public class Main extends Application{
                             writer.close();
                         }
                     } 
-                    catch (IOException e) 
+                    catch (IOException e)
                     {
                         e.printStackTrace();
                     }
                 }
-            	}
+            
+            //Read from sorted highscore and display in alert box
+            try {
+    	        if (animal.getStop()) {
+    	        		System.out.print("STOP:");
+    	        		/*
+    	        		background.stopMusic();
+    	        		stop();
+    	        		background.stop();
+    	        		*/
+    	        		reader1 = new BufferedReader(new FileReader("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscoresorted.txt"));
+    	                
+    	                //Reading all the lines of input file one by one and adding them into ArrayList
+    	                 
+    	                String currentLine = reader1.readLine();          
+    	                while (currentLine != null)
+    	                {
+    	                    lines1.add(currentLine);
+    	                    currentLine = reader1.readLine();
+    	                }
+    	        	Alert alert = new Alert(AlertType.INFORMATION);
+    	    		alert.setTitle("You Have Won The Game!");
+    	    		alert.setHeaderText("Your Score: "+animal.getPoints()+"!");
+    	    		alert.setContentText("Highest Possible Score: 800\n"+"Previous Highscores:\n" + lines);
+    	    		alert.show();
+    	        	}
+    	        }
+    	        
+            	catch (IOException e) 
+                    {
+                        e.printStackTrace();
+                    }
+    	        
+    	        } 
         };
     }
 	public void start() {

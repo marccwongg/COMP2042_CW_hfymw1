@@ -1,9 +1,4 @@
 Highgest Score First
-*****SCORE HISTORY*****
-*****SCORE HISTORY*****
- Your latest score is: 750
- Your latest score is: 550
-
-
-
+700
+300
 
