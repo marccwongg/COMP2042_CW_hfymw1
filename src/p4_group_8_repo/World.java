@@ -10,6 +10,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
@@ -86,6 +87,11 @@ public abstract class World extends Pane {
 
     public void stop() {
         timer.stop();
+    }
+    
+    //added exit button in in-game scene
+    public void add(p4_group_8_repo.Main.Button exitbtn) {
+        getChildren().add(exitbtn);
     }
     
     public void add(Actor actor) {

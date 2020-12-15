@@ -145,10 +145,21 @@ public class Main extends Application{
 		//Obstacle obstacle = new Obstacle("file:src/p4_group_8_repo/truck1Right.png", 25, 25, 3);
 		//Obstacle obstacle1 = new Obstacle("file:src/p4_group_8_repo/truck2Right.png", 100, 100,2 );
 		//Obstacle obstacle2 = new Obstacle("file:src/p4_group_8_repo/truck1Right.png",0,  150, 1);
-	  	    
+	  	
+		// GAME SCENE
 		BackgroundImage froggerback = new BackgroundImage("file:src/p4_group_8_repo/arcade.png");
 	    
 		background.add(froggerback);
+		
+		//Exit button
+		Button exitbtn = new Button("EXIT");
+		exitbtn.setTranslateX(5);
+		exitbtn.setTranslateY(5);
+	  	exitbtn.setOnMouseClicked(event -> {
+	  		  System.exit(0);
+	  	  });
+		
+		background.add(exitbtn);
 		
 		background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 0, 166, 0.75));
 		background.add(new Log("file:src/p4_group_8_repo/log3.png", 150, 220, 166, 0.75));
@@ -206,7 +217,7 @@ public class Main extends Application{
 		background.add(new Obstacle("file:src/p4_group_8_repo/truck2Right.png", 500, 540, 1, 200, 200));
 		background.add(new Obstacle("file:src/p4_group_8_repo/car1Left.png", 500, 490, -5, 50, 50));
 		background.add(new Digit(0, 30, 360, 25));
-		//background.add(new Button("BACK"));
+		//background.add(new InGameButton("EXIT",20,20));
 		//background.add(obstacle);
 		//background.add(obstacle1);
 		//background.add(obstacle2);
@@ -219,7 +230,7 @@ public class Main extends Application{
 	//end of start
 	
 		//Button styles (Refactored)
-	  	class Button extends StackPane{
+	  	public static class Button extends StackPane{
 			private Text text;
 			
 			public Button(String name) {
