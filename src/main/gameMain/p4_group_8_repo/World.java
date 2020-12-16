@@ -88,7 +88,7 @@ public abstract class World extends Pane {
     }
     
     //added exit button in in-game scene
-    public void add(main.gameMain.p4_group_8_repo.Main.Button exitbtn) {
+    public void add(main.gameMain.p4_group_8_repo.GameScene.Button exitbtn) {
         getChildren().add(exitbtn);
     }
     

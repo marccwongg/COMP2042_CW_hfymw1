@@ -1,0 +1,216 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for Failed to commit area from 0x0000000081400000 to 0x0000000089400000 of length 134217728.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (t:/workspace/open/src/hotspot/os/windows/os_windows.cpp:3301), pid=14816, tid=12588
+#
+# JRE version:  (13.0.2+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (13.0.2+8, mixed mode, aot, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --module-path=C:\Program Files\Utils\javafx-sdk-11.0.2\lib --add-modules=ALL-MODULE-PATH -Dfile.encoding=Cp1252 main.gameMain.p4_group_8_repo.Main
+
+Host: Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz, 8 cores, 7G,  Windows 8.1 , 64 bit Build 9600 (6.3.9600.19843)
+Time: Thu Dec 17 01:39:45 2020 Malay Peninsula Standard Time elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000591f720800):  JavaThread "Unknown thread" [_thread_in_vm, id=12588, stack(0x000000591d630000,0x000000591d730000)]
+
+Stack: [0x000000591d630000,0x000000591d730000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x624f9a]
+V  [jvm.dll+0x770cfa]
+V  [jvm.dll+0x7724af]
+V  [jvm.dll+0x772ab3]
+V  [jvm.dll+0x24bf08]
+V  [jvm.dll+0x6222aa]
+V  [jvm.dll+0x6170b5]
+V  [jvm.dll+0x30a88c]
+V  [jvm.dll+0x30a6c2]
+V  [jvm.dll+0x30fe36]
+V  [jvm.dll+0x353f46]
+V  [jvm.dll+0x353720]
+V  [jvm.dll+0x2e550a]
+V  [jvm.dll+0x2e67a2]
+V  [jvm.dll+0x74dd78]
+V  [jvm.dll+0x361989]
+V  [jvm.dll+0x730e65]
+V  [jvm.dll+0x3cc53f]
+V  [jvm.dll+0x3ce861]
+C  [jli.dll+0x51ff]
+C  [ucrtbase.DLL+0x203ba]
+C  [KERNEL32.DLL+0x13f2]
+C  [ntdll.dll+0x154f4]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff813aeccb8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000000591f766000 GCTaskThread "GC Thread#0" [stack: 0x000000593bba0000,0x000000593bca0000] [id=8500]
+  0x000000591f7b6800 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000593bca0000,0x000000593bda0000] [id=13596]
+  0x000000591f7b8000 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000593bda0000,0x000000593bea0000] [id=2388]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8133251d7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000591f71cac0] Heap_lock - owner thread: 0x000000591f720800
+
+Heap address: 0x0000000081400000, size: 2028 MB, Compressed Oops mode: Non-zero based: 0x0000000081400000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (8 events):
+Event: 0.008 Loaded shared library C:\Program Files\Java\jdk-13.0.2\bin\zip.dll
+Event: 0.008 Loaded shared library C:\Program Files\Java\jdk-13.0.2\bin\jimage.dll
+Event: 0.010 Loading shared library C:\Program Files\Java\jdk-13.0.2\lib\libjava.base-coop.dll failed, error code 126
+Event: 0.010 Loading shared library C:\Program Files\Java\jdk-13.0.2\lib\libjava.logging-coop.dll failed, error code 126
+Event: 0.010 Loading shared library C:\Program Files\Java\jdk-13.0.2\lib\libjdk.compiler-coop.dll failed, error code 126
+Event: 0.010 Loading shared library C:\Program Files\Java\jdk-13.0.2\lib\libjdk.scripting.nashorn-coop.dll failed, error code 126
+Event: 0.010 Loading shared library C:\Program Files\Java\jdk-13.0.2\lib\libjdk.internal.vm.ci-coop.dll failed, error code 126
+Event: 0.010 Loading shared library C:\Program Files\Java\jdk-13.0.2\lib\libjdk.internal.vm.compiler-coop.dll failed, error code 126
+
+
+Dynamic libraries:
+0x00007ff7af530000 - 0x00007ff7af53f000 	C:\Program Files\Java\jdk-13.0.2\bin\javaw.exe
+0x00007ff830670000 - 0x00007ff83081d000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff830250000 - 0x00007ff83038f000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ff82daf0000 - 0x00007ff82dc05000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ff81ff20000 - 0x00007ff81ff38000 	C:\Program Files\Java\jdk-13.0.2\bin\jli.dll
+0x00007ff81f790000 - 0x00007ff81f7a5000 	C:\Program Files\Java\jdk-13.0.2\bin\VCRUNTIME140.dll
+0x00007ff821930000 - 0x00007ff821934000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x00007ff81f780000 - 0x00007ff81f784000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x00007ff81f760000 - 0x00007ff81f763000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x00007ff81f750000 - 0x00007ff81f755000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-math-l1-1-0.dll
+0x00007ff81f740000 - 0x00007ff81f743000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x00007ff81f730000 - 0x00007ff81f733000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x00007ff82fd60000 - 0x00007ff82fe0a000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ff82b140000 - 0x00007ff82b3bb000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf\COMCTL32.dll
+0x00007ff82df80000 - 0x00007ff82e0f7000 	C:\WINDOWS\system32\USER32.dll
+0x00007ff82d740000 - 0x00007ff82d74a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff81f720000 - 0x00007ff81f723000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x00007ff81f710000 - 0x00007ff81f714000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-string-l1-1-0.dll
+0x00007ff81f6d0000 - 0x00007ff81f6d4000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x00007ff8303a0000 - 0x00007ff83044a000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ff82e110000 - 0x00007ff82e168000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x00007ff82fc20000 - 0x00007ff82fd60000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ff830100000 - 0x00007ff83024d000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ff814870000 - 0x00007ff81496c000 	C:\Program Files\Java\jdk-13.0.2\bin\ucrtbase.DLL
+0x00007ff82dc10000 - 0x00007ff82dc3e000 	C:\WINDOWS\system32\SspiCli.dll
+0x00007ff82e690000 - 0x00007ff82e6c6000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ff82fed0000 - 0x00007ff830021000 	C:\WINDOWS\system32\MSCTF.dll
+0x00007ff82d750000 - 0x00007ff82d780000 	C:\WINDOWS\system32\nvinitx.dll
+0x00007ff813ea0000 - 0x00007ff813f3b000 	C:\Program Files\Java\jdk-13.0.2\bin\msvcp140.dll
+0x00007ff81f6c0000 - 0x00007ff81f6c3000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-time-l1-1-0.dll
+0x00007ff81f6b0000 - 0x00007ff81f6b3000 	C:\Program Files\Java\jdk-13.0.2\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x00007ff813030000 - 0x00007ff813b8d000 	C:\Program Files\Java\jdk-13.0.2\bin\server\jvm.dll
+0x00007ff823dd0000 - 0x00007ff823dd9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff8242c0000 - 0x00007ff8242e2000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff830390000 - 0x00007ff830397000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ff82e630000 - 0x00007ff82e68a000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ff824100000 - 0x00007ff82412a000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ff82e620000 - 0x00007ff82e629000 	C:\WINDOWS\system32\NSI.dll
+0x00007ff82da40000 - 0x00007ff82da8f000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x00007ff82c5a0000 - 0x00007ff82c5c8000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x00007ff82b530000 - 0x00007ff82b540000 	C:\Program Files\Java\jdk-13.0.2\bin\verify.dll
+0x00007ff823460000 - 0x00007ff8235e9000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff827d40000 - 0x00007ff827d66000 	C:\Program Files\Java\jdk-13.0.2\bin\java.dll
+0x00007ff821bd0000 - 0x00007ff821be7000 	C:\Program Files\Java\jdk-13.0.2\bin\zip.dll
+0x00007ff827a00000 - 0x00007ff827a0a000 	C:\Program Files\Java\jdk-13.0.2\bin\jimage.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-13.0.2\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf;C:\Program Files\Java\jdk-13.0.2\bin\server
+
+VM Arguments:
+jvm_args: --module-path=C:\Program Files\Utils\javafx-sdk-11.0.2\lib --add-modules=ALL-MODULE-PATH -Dfile.encoding=Cp1252 
+java_command: main.gameMain.p4_group_8_repo.Main
+java_class_path (initial): C:\Users\Lenovo IBM\eclipse-workspace\TryFrog1\bin;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx.base.jar;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx.controls.jar;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx.fxml.jar;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx.graphics.jar;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx.media.jar;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx.swing.jar;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx.web.jar;C:\Program Files\Utils\javafx-sdk-11.0.2\lib\javafx-swt.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2126512128                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2126512128                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-13.0.2
+PATH=C:/Program Files/Java/jdk-13.0.2/bin/server;C:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files\Java\jdk-13.0.2\bin;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;;C:\Users\Lenovo IBM\Desktop;
+USERNAME=Lenovo IBM
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.19843)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, fma
+
+Memory: 4k page, system-wide physical 8108M (1199M free)
+TotalPageFile size 11180M (AvailPageFile size 49M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 60M, peak: 188M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (13.0.2+8) for windows-amd64 JRE (13.0.2+8), built on Dec 11 2019 09:20:33 by "mach5one" with unknown MS VC++:1916
+
+END.
