@@ -56,6 +56,10 @@ public class Main extends Application{
 	Animal animal;
 	Scene insscene;
 	
+    public static void main(String[] args) {
+		launch(args);
+	}
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
@@ -304,13 +308,13 @@ public class Main extends Application{
             	//Storing highscore into a text file
             	try {
             	    if (animal.getStop()) {
-            		File myObj = new File("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt");
+            		File myObj = new File("highscore.txt");
             	      if (myObj.createNewFile()) {
             	        System.out.println("File created: " + myObj.getName());
             	      } else {
             	        System.out.println("File already exists.");
             	     }
-            	    FileWriter myWriter = new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt", true);
+            	    FileWriter myWriter = new FileWriter("highscore.txt", true);
             	    myWriter.write("*****SCORE HISTORY*****" + newLine);
             	    }
             	   } catch (IOException e) {
@@ -320,7 +324,7 @@ public class Main extends Application{
             	
             	try {
             		if (animal.getStop()) {
-            		FileWriter myWriter1 = new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt", true);
+            		FileWriter myWriter1 = new FileWriter("highscore.txt", true);
             	    myWriter1.write(newLine + ""+ animal.getPoints()+ newLine);
           	        myWriter1.close();
             		}
@@ -333,7 +337,7 @@ public class Main extends Application{
             	try
             	{
             		//Creating BufferedReader object to read the input file
-            		reader = new BufferedReader(new FileReader("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscore.txt"));
+            		reader = new BufferedReader(new FileReader("highscore.txt"));
             		//Reading all the lines of input file one by one and adding them into ArrayList
             		String currentLine = reader.readLine();
             		while (currentLine != null) 
@@ -348,7 +352,7 @@ public class Main extends Application{
                      
                     //Creating BufferedWriter object to write into output file
                      
-                    writer = new BufferedWriter(new FileWriter("C:\\Users\\Lenovo IBM\\eclipse-workspace\\TryFrog1\\highscoresorted.txt"));
+                    writer = new BufferedWriter(new FileWriter("highscoresorted.txt"));
                     
                   //Writing sorted lines into output file
                     writer.write("Highgest Score First");
@@ -405,7 +409,7 @@ public class Main extends Application{
     	        	Alert alert = new Alert(AlertType.INFORMATION);
     	    		alert.setTitle("You Have Won The Game!");
     	    		alert.setHeaderText("Your Score: "+animal.getPoints()+"!");
-    	    		alert.setContentText("Highest Possible Score: 800\n"+"Previous Highscores:\n" + lines);
+    	    		alert.setContentText("Highest Possible Score: 800\n"+"Highscore Leaderboard:\n" + lines);
     	    		alert.show();
     	        	}
     	        }
@@ -438,18 +442,7 @@ public class Main extends Application{
     		  shift+=30;
     		}
     }
-    
-    public static void main(String[] args) {
-		launch(args);
-	}
-
-	/*@Override
-	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}*/
-
-	
+  
     
 }
 

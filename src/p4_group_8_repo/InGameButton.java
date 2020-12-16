@@ -66,19 +66,7 @@ public class InGameButton extends Actor{
 			
 		}
 	}
-  	
-	public InGameButton() {
-		// TODO Auto-generated constructor stub
-		Button exitbtn = new Button("EXIT");
-		exitbtn.setTranslateX(300);
-		exitbtn.setTranslateY(300);
-	  	exitbtn.setOnMouseClicked(event -> {
-	  		  System.exit(0);
-	  	  });
-	}
 	
-	
-
 }
 	
 /*	public void InGameBtton(String ingamebutton, int x, int y) {
