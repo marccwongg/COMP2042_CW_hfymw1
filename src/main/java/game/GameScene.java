@@ -33,6 +33,7 @@ public class GameScene {
 	AnimationTimer timer;
 	MyStage background;
 	Animal animal;
+	BackgroundMusic music;
 
 	public void gamescene(Stage primaryStage) {
 		

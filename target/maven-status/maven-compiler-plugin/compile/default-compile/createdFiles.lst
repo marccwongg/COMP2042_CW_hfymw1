@@ -1,6 +1,7 @@
 game\Animal.class
 game\MyStage.class
 game\World$1$1.class
+game\BackgroundMusic.class
 game\Log.class
 game\Main.class
 game\Menu$Button.class

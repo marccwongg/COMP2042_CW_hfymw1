@@ -1,5 +1,6 @@
 Highgest Score First
 800
+800
 700
 700
 700
@@ -8,6 +9,7 @@ Highgest Score First
 550
 500
 300
+
 
 
 
