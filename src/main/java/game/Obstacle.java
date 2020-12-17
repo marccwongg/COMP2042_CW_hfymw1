@@ -13,6 +13,15 @@ public class Obstacle extends Actor {
 			setX(600);
 	}
 	
+	/**
+	 * 
+	 * @param imageLink image file directory
+	 * @param xpos x position
+	 * @param ypos y position
+	 * @param s speed
+	 * @param w width
+	 * @param h height
+	 */
 	public Obstacle(String imageLink, int xpos, int ypos, int s, int w, int h) {
 		setImage(new Image(imageLink, w,h, true, true));
 		setX(xpos);

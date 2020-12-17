@@ -1,3 +1,8 @@
+/**
+ * @Refactored
+ * Removed all unsued imports
+ * Menu scene extracted from Main
+ */
 package game;
 
 import javafx.geometry.Pos;
@@ -20,6 +25,10 @@ public class Menu {
 
 	Scene menuscene, insscene;
 	
+	/**
+	 * set stage for Menu Scene
+	 * @param primaryStage
+	 */
 	public void menu (Stage primaryStage){
 		
 		//Menu Background Image
@@ -110,12 +119,13 @@ public class Menu {
 	}
 	//end of start
 	
-		//Button styles (Refactored)
+		
 	  	public static class Button extends StackPane{
 			private Text text;
 			
-			/*
-			 * @param name text to be displayed on button 
+			/**
+			 *Construct a name instance for Game Scene buttons
+			 *@param name to give instance
 			 */
 			public Button(String name) {
 				text = new Text(name);

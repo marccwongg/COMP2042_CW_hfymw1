@@ -1,6 +1,7 @@
 /**
- * Refactored
- * Game scene taken out from Main
+ * @Refactored
+ * Removed all unsued imports
+ * Game scene extracted from Main
  */
 package game;
 
@@ -34,7 +35,11 @@ public class GameScene {
 	MyStage background;
 	Animal animal;
 	BackgroundMusic music;
-
+	
+	/**
+	 * set stage for Game Scene
+	 * @param primaryStage
+	 */
 	public void gamescene(Stage primaryStage) {
 		
 		background = new MyStage();
@@ -128,10 +133,16 @@ public class GameScene {
 			}
 			//end of start
 			
-				//Button styles (Refactored)
+				/**
+				 *Button Designs
+				 */
 			  	public static class Button extends StackPane{
 					private Text text;
 					
+					/**
+					 *Construct a name instance for Game Scene buttons
+					 *@param name to give instance
+					 */
 					public Button(String name) {
 						text = new Text(name);
 						text.getFont();
@@ -185,7 +196,9 @@ public class GameScene {
 		                BufferedWriter writer = null;
 		                String newLine = System.getProperty("line.separator");
 		                
-		              //Create an ArrayList object to hold the lines of input file
+		              /**
+		               * Create an ArrayList object to hold the lines of input file
+		               */
 		                ArrayList<String> lines = new ArrayList<String>();
 		                ArrayList<String> lines1 = new ArrayList<String>();
 		                
@@ -200,7 +213,9 @@ public class GameScene {
 		            		background.stop();
 		            	}
 		            	
-		            	//Storing highscore into a text file
+		            	/**
+		            	 * Storing highscore into a text file
+		            	 */
 		            	try {
 		            	    if (animal.getStop()) {
 		            		File myObj = new File("highscore.txt");
@@ -282,7 +297,9 @@ public class GameScene {
 		                    }
 		                }
 		            
-		            //Read from sorted highscore and display in alert box
+		            /**
+		             * Read from sorted highscore and display in alert box
+		             */
 		            try {
 		    	        if (animal.getStop()) {
 		    	        		System.out.print("STOP:");
@@ -317,6 +334,9 @@ public class GameScene {
 		    	        } 
 		        };
 		    }
+			/**
+			 * Controller for background music
+			 */
 			public void start() {
 				background.playMusic();
 		    	createTimer();
@@ -327,6 +347,10 @@ public class GameScene {
 		        timer.stop();
 		    }
 		    
+		    /**
+		     * Highscore board
+		     * @param n
+		     */
 		    public void setNumber(int n) {
 		    	int shift = 0;
 		    	while (n > 0) {

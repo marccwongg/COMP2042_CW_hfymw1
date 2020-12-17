@@ -14,6 +14,14 @@ public class Log extends Actor {
 			setX(700);
 	}
 	
+	/**
+	 * Access log in game scene
+	 * @param imageLink image file directory
+	 * @param size 
+	 * @param xpos set x position
+	 * @param ypos set y position
+	 * @param s set speed
+	 */
 	public Log(String imageLink, int size, int xpos, int ypos, double s) {
 		setImage(new Image(imageLink, size,size, true, true));
 		setX(xpos);
@@ -21,6 +29,11 @@ public class Log extends Actor {
 		speed = s;
 		
 	}
+	
+	/**
+	 * 
+	 * @return TRUE if speed less than 0
+	 */
 	public boolean getLeft() {
 		return speed < 0;
 	}

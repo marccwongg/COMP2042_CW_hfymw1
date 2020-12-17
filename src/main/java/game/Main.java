@@ -1,6 +1,9 @@
-/*
- * @Refactored
- * Taken out Menu and GameScene from main 
+/**
+ * @author Marcus Wong
+ * @Refactored 
+ * Main class containing Main method
+ * Extracted Menu and GameScene from main 
+ * Ensure single rsponsibility
  */
 package game;
 
@@ -15,6 +18,10 @@ public class Main extends Application{
 	}
 	
 	@Override
+	/**
+	 * Display Menu scene once game is launched
+	 * @throws Exception if unable to display primaryStage scene
+	 */
 	public void start(Stage primaryStage) throws Exception {
 		
 		Menu start = new Menu();

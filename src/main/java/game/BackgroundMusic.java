@@ -1,3 +1,13 @@
+/**
+ * @Refactored background music into seperate class from game scene
+ * New class
+ * Ensure single responsibility
+ * Remove all unused imports
+ * BackgroundMusic not subclass of MyStage, replace with aggregation, promote loose coupling
+ * self encapsulating field to avoid direct access of field  even within own class
+ * create setter and getter for encapsulated field
+ * extract method prepareMP() to set up a media player
+ */
 package game;
 
 import java.io.File;

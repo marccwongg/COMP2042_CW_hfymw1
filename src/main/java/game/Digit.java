@@ -11,6 +11,13 @@ public class Digit extends Actor{
 		
 	}
 	
+	/**
+	 * Access highscore board
+	 * @param n highscore board 
+	 * @param dim
+	 * @param x set x position
+	 * @param y set y position
+	 */
 	public Digit(int n, int dim, int x, int y) {
 		im1 = new Image("file:src/main/resources/"+n+".png", dim, dim, true, true);
 		setImage(im1);

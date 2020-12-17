@@ -31,6 +31,15 @@ public class Turtle extends Actor{
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
+	
+	/**
+	 * Access turtle in game scene
+	 * @param xpos set x position
+	 * @param ypos set y position
+	 * @param s set speed
+	 * @param w set width
+	 * @param h set height
+	 */
 	public Turtle(int xpos, int ypos, int s, int w, int h) {
 		turtle1 = new Image("file:src/main/resources/TurtleAnimation1.png", w, h, true, true);
 		turtle2 = new Image("file:src/main/resources/TurtleAnimation2.png", w, h, true, true);

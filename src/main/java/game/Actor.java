@@ -16,11 +16,19 @@ public abstract class Actor extends ImageView{
     public World getWorld() {
         return (World) getParent();
     }
-
+    
+    /**
+     * Access width of Actors (Sprites)
+     * @return width of Actors
+     */
     public double getWidth() {
         return this.getBoundsInLocal().getWidth();
     }
 
+    /**
+     * Access height of Actors (Sprites)
+     * @return height of Actors
+     */
     public double getHeight() {
         return this.getBoundsInLocal().getHeight();
     }

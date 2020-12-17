@@ -32,6 +32,11 @@ public class Animal extends Actor {
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
+	
+	/**
+	 * Construct a name instance for frog in game scene
+	 * @param imageLink image file directory
+	 */
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
@@ -44,6 +49,10 @@ public class Animal extends Actor {
 		imgA2 = new Image("file:src/main/resources/froggerLeftJump.png", imgSize, imgSize, true, true);
 		imgS2 = new Image("file:src/main/resources/froggerDownJump.png", imgSize, imgSize, true, true);
 		imgD2 = new Image("file:src/main/resources/froggerRightJump.png", imgSize, imgSize, true, true);
+		
+		/**
+		 * Event Handler
+		 */
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event){
 				if (noMove) {
@@ -246,10 +255,19 @@ public class Animal extends Actor {
 			//setY(679.8+movement);
 		}
 	}
+	
+	/**
+	 * check if all 5 checkpoints has been completed
+	 * @return TRUE if all 5 checkpoints has been completed
+	 */
 	public boolean getStop() {
 		return end==5;
 	}
 	
+	/**
+	 * acessing highscore board
+	 * @return total points of highscore board
+	 */
 	public int getPoints() {
 		return points;
 	}
