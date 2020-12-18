@@ -76,7 +76,7 @@ History of version control can be found in `TryFrog1/Screenshots/GitHub` folder 
 
 ## Screenshot of Frogger Game
 #### Menu Scene
-![MenuScene](https://github.com/marccwongg/COMP2042_CW_hfymw1/blob/master/Screenshots/FroggerGame/GameScene.PNG)
+![MenuScene](https://github.com/marccwongg/COMP2042_CW_hfymw1/blob/master/Screenshots/FroggerGame/MenuScene.PNG)
 #### Game Scene
 ![GameScene](https://github.com/marccwongg/COMP2042_CW_hfymw1/blob/master/Screenshots/FroggerGame/GameScene.PNG)
 
