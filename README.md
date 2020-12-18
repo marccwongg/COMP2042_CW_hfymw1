@@ -3,6 +3,8 @@ Author: Marcus Wong J- Fatt
 Student ID: 20115147
 OWA: hfymw1
 
+Please view this README.md in my GitHub repository for better alignment and formatting.
+
 ## Introduction
 This coursework is about maintaining and extending a re-implementation of a classic retro game - Frogger.
 
