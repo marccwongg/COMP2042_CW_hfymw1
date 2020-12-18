@@ -6,13 +6,10 @@ game\Log.class
 game\Main.class
 game\Menu$Button.class
 game\Actor.class
-game\InGameButton.class
 game\BackgroundImage.class
 game\Turtle.class
 game\World$1.class
 game\Animal$2.class
-game\InGameButton$Button.class
-game\AlertBox.class
 game\GameScene$Button.class
 game\Menu.class
 game\World$1$2.class
